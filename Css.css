@@ -1,0 +1,103 @@
+body{
+	
+	background : url("Image/fd.jpg");
+	background-position: top right;
+	background-attachment:scroll; 
+	color: white;
+	
+	
+	
+}
+
+.top1{
+	text-align: top;
+}
+
+.fpc{
+	margin-left: 35em;
+}
+
+#Titre {
+	
+	color: white;
+}
+
+.structure {
+	
+	color:red;
+	text-align: center;
+}	
+
+.imageStructure
+{
+	float: middle;
+}
+
+ul a {
+	
+	text-decoration: underline;
+	color:red;
+}
+
+strong{
+	
+	font-size: 50px;
+}
+
+h2 {
+	
+	text-align:center;
+	text-shadow:2px 2px 4px blue;
+	border:3px inset;
+	border-color: red;
+	border-radius:10pc 15px 20px 50px;
+	background-color:#ffd979;
+	box-shadow: 12px 12px 0px 0px red;
+	width: 50%;
+	/*margin-left: auto;
+	margin-right: auto;*/
+	margin:0 auto;
+}
+.var {
+	
+	font-size:200px;
+}
+
+
+#conteneur {
+	
+	display:flex;
+	justify-content:center;
+}
+
+.element :nth-child(1)
+{	
+	margin-right: -100px;
+	
+	flex:1;
+}
+
+.element:nth-child(2){
+	
+	size:100px 
+}
+
+.dessous 
+{
+	clear:both;
+	text-align:left;
+}
+
+.const{
+	
+	float:left;
+}
+
+.prod{
+	
+	float:right;
+	margin-top:-1500px;
+	
+	
+}
+

@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<title>Le pascal pour les nuls </title>
+		<link rel="stylesheet" type="text/css" href="Css.css">
+	</head>
+	
+	
+	<body>
+		<h2> STRUCTURE Boucle et Condition </h2>
+		
+	<p> voicie comment utiliser les conditions If ,Then ,else. </br>
+	Une instruction conditionnelle permet d'exécuter des instructions seulement dans une certaine condition.</br>
+
+var </br>
+    age : integer;</br>
+</br>
+begin</br>
+    writeln('Quel est ton âge?');</br>
+    readln(age);</br>
+    </br>
+    if (age < 18) then</br>
+    </br>
+        writeln('Tu es mineur.');</br>
+    </br>
+end.</br>
+</br>
+Ainsi, dans l'exemple ci-dessus, le programme indiquera à l'utilisateur qu’il est mineur seulement s'il son âge est strictement inférieur à 18</br>
+</br>
+if ... then ... else ...</br>
+</br>
+On peut également préciser ce que le programme doit faire dans le cas contraire. Les deux exemples suivants sont donc presque équivalents.</br>
+Sans "else" 	Avec "else"</br>
+</br>
+var </br>
+    age : integer;</br>
+</br>
+begin</br>
+    writeln('Quel est ton âge?');</br>
+    readln(age);</br>
+    </br>
+    if (age < 18) then</br>
+    begin</br>
+        writeln('Tu es mineur.')</br>
+    end;</br>
+    </br>
+    if (age >= 18) then</br>
+    begin</br>
+        writeln('Tu es majeur.')</br>
+    end</br>
+end.</br>
+</br>
+	</br>
+</br>
+var </br>
+    age : integer;</br>
+</br>
+begin</br>
+    writeln('Quel est ton âge?');</br>
+    readln(age);</br>
+    </br>
+    if age < 18 then</br>
+    begin</br>
+        writeln('Tu es mineur.')</br>
+    end</br>
+    else</br>
+    begin</br>
+        writeln('Tu es majeur.')</br>
+    end</br>
+end.</br>
+</br>
+Dans les deux cas, le programme indiquera si l'utilisateur est mineur ou majeur. Cependant, le code de gauche consiste à faire deux fois le test, tandis que celui de droite consiste à ne faire qu'un seul test. Ce dernier est donc à préférer.</br></p>
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</p> Les structures de boucle
+
+Notre exemple avance. Maintenant, si nous désirons construire une phrase non plus avec trois mots, mais avec cinq, nous n'allons tout de même pas répéter notre code cinq fois !!!
+
+Pour cela, il suffit d'utiliser une des structures de boucle. Il en existe trois : le For ... to ... do ... (pour <valeur initiale> jusqu'à <valeur finale> faire <ceci>), le while (tant que <condition>) et le repeat ... until (répète <ceci> jusqu'à <condition>).
+
+Le For et le while sont utilisés quand on connaît à l'avance le nombre de fois que la boucle doit être exécutée. Dans le repeat ... until la condition de fin de boucle est à la fin, et on l'utilise quand la boucle doit au moins être parcourue une fois.
+
+Notre exemple avec un For :</p></br>
+</p>Program MonDeuxiemeProg;</br>
+
+function ConstruitPhrase(phrase:string):string;</br>
+var s : string;</br>
+begin</br>
+  readln(s);</br>
+  ConstruitPhrase:=phrase+', '+s;</br>
+end;</br>
+
+var</br>
+  Phrase : string;</br>
+  i : integer;</br>
+begin</br>
+  Phrase:='';  {initialiser à chaîne vide}</br>
+  for i:=1 to 3 do begin</br>
+    writeln('Entrez un mot :');</br>
+    Phrase:=ConstruitPhrase(Phrase);</br>
+  end</br>
+
+  {afficher le résultat}</br>
+  writeln('La phrase complète est :');</br>
+  writeln(Phrase);</br>
+
+  writeln('Appuyer sur <entrée> pour quitter');</br>
+  readln;</br>
+end.</br>
+</br>
+</br>
+</br>
+
+
+Avec un while :</br>
+  [...]</br>
+
+  i:=1;  {initialiser i}</br>
+  while i<>3 do begin</br>
+    writeln('Entrez un mot :');</br>
+</br>
+</br>
+</br>
+</br>
+Avec un repeat :</br>
+  [...]</br>
+</br>
+  i:=1;  {initialiser i}</br>
+  repeat</br>
+    writeln('Entrez un mot :');</br>
+    Phrase:=ConstruitPhrase(Phrase);</br>
+    inc(i);  {incrémente i à chaque tour}</br>
+  until i>3;</br>
+</br>
+  {afficher le résultat}</br>
+  [...]</br>
+end.</br>
+
+<p>
+	<nav>
+		<ul>
+			<li><a href="fctprocedure.html">fonction/procedure</a></li>
+			<li><a href="tab.html">tableaux/types</a></li>
+			<li><a href="Pacal.html">retour au menu </a></li>
+		</ul>
+	</nav>
+</p>
+
+
+
+

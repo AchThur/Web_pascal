@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<title>Le pascal pour les nuls </title>
+		<link rel="stylesheet" type="text/css" href="Css.css">
+	</head>
+	
+	
+	<body>
+			<h2> Les fonctions Procedure </h2>
+			
+		<p>Les procédures et fonctions sont des sortes de sous-programmes écrits avant le programme principal mais appelés depuis ce programme principal, d'une autre procédure ou même d'une autre fonction. Le nom d'une procédure ou d'une fonction est un identifiant qui ne de doit pas excéder 127 caractères et ne pas contenir d'accent. Ce nom doit, en outre, être différent de celui d'une instruction en Pascal.</br>
+</br>
+Procedure</br>
+Syntaxe :</br>
+</br>
+program nom de programme ;</br>
+</br>
+procedure nom de procédure;  {Déclaration de la procédure}</br>
+begin</br>
+...</br>
+instructions</br>
+...</br>
+end;</br>
+</br>
+begin;  {Début du programme principal}</br>
+...</br>
+nom de procédure; {appel de la procédure}</br>
+...</br>
+end.</br>
+</br>
+Exemple :</br>
+program test;</br>
+</br>
+procedure AfficheDate;</br>
+begin</br>
+writeln(DateTimeToStr(Now));</br>
+end;</br>
+</br>
+begin;</br>
+write(‘ Début : ’);AfficheDate;</br>
+writeln(‘ Suite des instuctions ’);</br>
+write(‘ Fin  : ’);AfficheDate;</br>
+end.</br>
+</br>
+On peut déclarer des variables locales à une procédure ou une fonction. La portée de ces variables sera locale à la procédure ou à la fonction.</br>
+</br>
+Exemple</br>
+program Dessine_Carre_Chiffres;</br>
+</br>
+procedure Ligne;   {dessine une ligne de 5 chiffres}</br>
+var i : integer;   {la variable i est locale à la procédure Ligne}</br>
+begin</br>
+for i:=1 to 5 do write(i);</br>
+end;</br>
+</br>
+var i : integer;</br>
+begin</br>
+for i:=1 to 5 do {dessine 5 lignes de 5 chiffres}</br>
+  begin</br>
+    Ligne; writeln;</br>
+  end;</br>
+end.</br>
+</br>
+Fonction</br>
+Une fonction est une procédure "qui ramène un résultat" d'un type simple qu'on précise dans la déclaration de la fonction.</br>
+Pour "ramener" le résultat, il suffit d'ajouter une ligne où on affecte le résultat au nom de la fonction</br>
+</br>
+Syntaxe :</br>
+</br>
+Program nom_de_programme ;</br>
+</br>
+fonction nom_de_fonction( noms de variables : types ) : type;</br>
+Begin</br>
+...</br>
+commandes</br>
+nom_de_fonction := résultat</br>
+...</br>
+End ;</br>
+</br>
+BEGIN</br>
+variable := nom_de_fonction ( noms d'autres variables ou leurs valeurs ) ;</br>
+END.</br>
+</br>
+Exemple :</br>
+</br>
+fonction Maintenant : string;</br>
+ begin</br>
+  Maintenant := DateTimeToString(Nom);</br>
+ end;</br>
+</br>
+begin</br>
+writeln(Maintenant);</br>
+end.</br>
+</br>
+Passage de paramètres à une procédure ou une fonction</br>
+On peut passer des paramètres à une procédure ou un fonction sous forme d'une liste de paramètres formels entre parenthèses.</br>
+A l'intérieur du corps de la procédure, les paramètres sont des variables locales. Il ne faut pas redéclarer le nom des paramètres dans la section des déclarations locales</br>
+</br>
+Exemple :</br>
+</br>
+function Min (a,b:real) : real;</br>
+begin</br>
+if a < b then Min := a else Min := b;</br>
+end;</br>
+</br>
+var x1,x2,x3,x4 : real ;</br>
+begin</br>
+x1 :=5; x2:=3.14; x3:=1;x4:=0;</br>
+writeln(Min(Min(x1,x2),Min(x3,x4));</br>
+end.</br>
+</br>
+C ’est la valeur du paramètre qui est passé à la procédure. Si la valeur est modifiée à l ’intérieur de la procédure, la modification n ’est pas répercutée à la sortie de la procédure.</br>
+</br>
+Exemple :</br>
+</br>
+function Puissance (x : real;n:integer) : real;</br>
+var p:real;</br>
+begin</br>
+ p:=1;</br>
+ while n>0 do begin</br>
+  p:= p * x;</br>
+  n:= n - 1;</br>
+ end;</br>
+ Puissance := p;</br>
+end;</br>
+</br>
+var n : integer;</br>
+begin</br>
+n:=3;</br>
+writeln(‘ Pi au cube =‘ ,Puissance(3.14159,n));</br>
+writeln(n);  {la valeur de n n'a pas été modifiée}</br>
+end.</br>
+</br>
+Passage de paramètre par référence</br>
+</br>
+Si on souhiate que les modifications apportées dans la procédure soient reportées dans le code appelant, il faut mettre le mot clé var dans le passage de paramètre. C'est alors la référence à la variable (et non pas la valeur de cette variable) qui est passé en paramètre. NB : on ne peut pas passer des constantes dans un passage par référence.</br>
+</br>
+Exemple :</br>
+</br>
+procedure echange(var a,b:real)</br>
+ var temp:real;</br>
+  begin</br>
+  temp:=a; a:=b; b:=temp;</br>
+  end;</br>
+</br>
+var x,y:real;</br>
+begin</br>
+ x:=5;y:=15;echange(x,y);</br>
+ writeln(‘ x: ’,x, ’ y: ’,y)</br>
+end.</br>
+</br></p>
+<p><img src="fct_prod/proc_fonc" class="prod" alt="pascal" alt= "fct,proc"/></p> 
+<strong> une fois que vous avez fini vous pouvez passer au cours suivant</strong>
+<p>
+	<nav>
+		<ul>
+			<li><a href="tab.html">tableaux/types</a></li>
+			<li><a href="Pacal.html">retour au menu </a></li>
+		</ul>
+	</nav>
+</p>
